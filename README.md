@@ -2,7 +2,7 @@
 
 html, css and javascript only. 30 days of javascript tutorial.
 
-Exercise 2 - Have a function that makes clock hands move by hours, minutes and seconds
+##### Exercise 2 - Have a function that makes clock hands move by hours, minutes and seconds
 
 ```
     <script>
@@ -27,7 +27,7 @@ Exercise 2 - Have a function that makes clock hands move by hours, minutes and s
     </script>
 ```
 
-Excersise 3 - Have a function that updates css variables to change spacing, blur and base color in a picture
+##### Exercise 3 - CSS Variables. Have a function that updates css variables to change spacing, blur and base color in a picture
 
 ```
   <script>
@@ -44,4 +44,39 @@ Excersise 3 - Have a function that updates css variables to change spacing, blur
         input.addEventListener('mousemove', handleUpdate)
       );
     </script>
+```
+
+##### Exercise 4 - Array Cardio Day 1. Practice with Arrays methods. Learned that console.table will console a nice table with data on the console.
+
+```
+  const inventorsFiltered = inventors.filter((inventor) => {
+        return inventor.year >= 1500 && inventor.year < 1600;
+      });
+      console.table(inventorsFiltered);
+```
+
+Also, to reduce an array of items that are repeated you use an object in the reducer. It will return: {car:5,bike:2,walk:2,van:2} ex:
+
+```
+const data: ['car',
+        'car',
+        'truck',
+        'truck',
+        'bike',
+        'walk',
+        'car',
+        'van',
+        'bike',
+        'walk',
+        'car',
+        'van',
+        'car',
+        'truck',]
+const sumInst = data.reduce((obj, d) => {
+        if (!obj[d]) {
+          obj[d] = 0;
+        }
+        obj[d]++;
+        return obj;
+      }, {});
 ```
