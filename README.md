@@ -81,7 +81,7 @@ const sumInst = data.reduce((obj, d) => {
       }, {});
 ```
 
-##### Exercise 4 Flex Panel Image Gallery
+##### Exercise 5 Flex Panel Image Gallery
 
 Use of nested flexbox to have 5 panel behave in a way that we don't need to provide width. Only flexbox. With some javascript those panel will show only certain text and the javascript will modify the width of a selected panel:
 
@@ -125,4 +125,18 @@ Use of nested flexbox to have 5 panel behave in a way that we don't need to prov
         panel.addEventListener('transitionend', toggleActive)
       );
     </script>
+```
+
+##### 06 Ajax type ahead
+
+Get data from an API and add it to an array so it can be searched and displayed:
+
+```
+  const endpoint =
+        'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+      const cities = [];
+
+      fetch(endpoint)
+        .then((data) => data.json())
+        .then((data) => cities.push(...data));
 ```
