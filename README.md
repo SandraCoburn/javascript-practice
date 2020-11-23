@@ -80,3 +80,49 @@ const sumInst = data.reduce((obj, d) => {
         return obj;
       }, {});
 ```
+
+##### Exercise 4 Flex Panel Image Gallery
+
+Use of nested flexbox to have 5 panel behave in a way that we don't need to provide width. Only flexbox. With some javascript those panel will show only certain text and the javascript will modify the width of a selected panel:
+
+```
+   .panel {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background: #6b0f9c;
+        box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+        color: white;
+        text-align: center;
+        align-items: center;
+        /* Safari transitionend event.propertyName === flex */
+        /* Chrome + FF transitionend event.propertyName === flex-grow */
+        transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+          flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+        font-size: 20px;
+        background-size: cover;
+        background-position: center;
+      }
+ .panel.open {
+        font-size: 40px;
+        flex: 5;
+      }
+
+ <script>
+      const panels = document.querySelectorAll('.panel');
+      function toggleOpen() {
+        this.classList.toggle('open');
+      }
+      function toggleActive(e) {
+        if (e.propertyName.includes('flex')) {
+          this.classList.toggle('open-active');
+        }
+      }
+      panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
+      panels.forEach((panel) =>
+        panel.addEventListener('transitionend', toggleActive)
+      );
+    </script>
+```
