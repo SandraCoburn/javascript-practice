@@ -140,3 +140,14 @@ Get data from an API and add it to an array so it can be searched and displayed:
         .then((data) => data.json())
         .then((data) => cities.push(...data));
 ```
+
+##### 07 Array Cardio Dary 2
+
+Use of Array prototype methods: some(), every(), find(), findIndex()
+
+```
+const isAdult = people.some((person) => new Date().getFullYear() - person.year >= 19);
+const allAdults = people.every((person) => new Date().getFullYear() - person.year >= 19);
+const findComment = comments.find((comment) => comment.id === 823423);
+const index = comments.findIndex((comment) => comment.id === 823423);
+```
